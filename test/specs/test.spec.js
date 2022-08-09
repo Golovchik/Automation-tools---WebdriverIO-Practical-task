@@ -26,7 +26,7 @@ describe("Automation tools - WebdriverIO Practical task", () => {
     });
 
     after("close the browser", () => {
-        //pastebinPage.quit();
+        pastebinPage.quit();
     });
 
     describe("I Can Win", () => {
@@ -71,10 +71,6 @@ describe("Automation tools - WebdriverIO Practical task", () => {
         });
 
         it("should save paste", async () => {
-            //postedPastePage.open("https://pastebin.com/6Fe41LeB");//
-            //postedPastePage.open("https://pastebin.com/bRjRTYeG");// 
-            //https://pastebin.com/tkgz6zy9
-            //postedPastePage.open("https://pastebin.com/tkgz6zy9");//
             const createNewPasteButton = await pastebinPage.createNewPasteButton();
             await createNewPasteButton.click();
             
