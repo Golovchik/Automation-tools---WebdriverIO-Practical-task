@@ -5,47 +5,48 @@ export default class Page {
         this.driver = driver;
     };
 
-    async open(path) {
-         await this.driver.get(path);
+    open(path) {
+        this.driver.get(path);
     };
 
-    async quit() {
-         await this.driver.quit();
+    quit() {
+        this.driver.quit();
     };
 
-    async getTitle() {
-        return await this.driver.getTitle();
+    getTitle() {
+        return this.driver.getTitle();
     };
 
-    async findById(id) {
-        return await this.driver.findElement(By.id(id));
+    findById(id) {
+        return this.driver.findElement(By.id(id));
     };
 
-    async findByCss(css) {
-        return await this.driver.findElement(By.css(css));
+    findByCss(css) {
+        return this.driver.findElement(By.css(css));
     };
 
-    async findByСlassName(className) {
-        return await this.driver.findElement(By.className(className));
+    findByСlassName(className) {
+        return this.driver.findElement(By.className(className));
     };
 
-    async findByXpath(xpath) {
-        return await this.driver.findElement(By.xpath(xpath));
+    findByXpath(xpath) {
+        return this.driver.findElement(By.xpath(xpath));
     };
 
-    async setValue (element, value) {
-        await element.clear();
-        return await element.sendKeys(value);
-     };
+    findAllByXpath (xpath) {
+        return this.driver.findElements(By.xpath(xpath));
+    };
 
-    async addValue (element, value) {
-        return await element.sendKeys(value);
-     };
+    setValue (element, value, key = Key.SHIFT) {
+        element.clear();
+        return element.sendKeys(value, key);
+    };
 
-     async click (element) {
-        return await element.click();
-     };
-  
+    addValue (element, value, key = Key.SHIFT) {
+        return element.sendKeys(value, key);
+    };
 
-    
+    click (element) {
+        return element.click();
+    };
 }

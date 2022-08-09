@@ -5,31 +5,35 @@ export default class PastebinPage extends Page {
         super(driver);
     };
 
-    get newPaste() { 
-        return this.findById('postform-text'); 
+    open() {
+        super.open('https://pastebin.com');
     }
 
-    get pasteExpiration() { 
+    newPasteInput() { 
+        return this.findById('postform-text'); 
+    };
+
+    syntaxHighlightingDropDown() { 
+        return this.findById('select2-postform-format-container'); 
+    }
+
+    syntaxHighlightingDropDownItemBash() { 
+        return this.findByXpath('//li[@id="select2-postform-format-result-1onh-8"] | //li[text()="Bash"]'); 
+    }
+
+    pasteExpirationDropDown() { 
         return this.findById('select2-postform-expiration-container'); 
     }
 
-    get pasteExpirationItem10Minutes() { 
+    pasteExpirationItem10Minutes() { 
         return this.findByXpath('//li[@id="select2-postform-expiration-result-u88u-10M"] | //li[text()="10 Minutes"]'); 
     }
 
-    get pasteNameTitle() { 
+    pasteNameTitleInput() { 
         return this.findById('postform-name');
      }
 
-    get createNewPaste() { 
+    createNewPasteButton() { 
         return this.findByXpath('//button[text()="Create New Paste"]'); 
     }
-
-    async open() {
-        await super.open('https://pastebin.com');
-    }
-
-
 }
-
-//export default new PastebinPage();

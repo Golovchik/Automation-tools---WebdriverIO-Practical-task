@@ -44,9 +44,12 @@ git push origin master --force
 
 * Check that the code matches the one entered in paragraph 2
 
-# Steps
+# Executed commands
 1. npm init
 2. npm init wdio
 3. npm i --save-dev selenium-webdriver
 4. npm i --save-dev mocha
 5. npm i --save-dev chai
+
+# Commands for running tests
+1. npm run test
