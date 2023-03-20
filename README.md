@@ -1,4 +1,4 @@
-# Automation-tools---WebdriverIO-Practical-task
+# Automation-tools---Selenium WebDriver-Practical-task
 When performing the task, you must use the capabilities of Selenium WebDriver, the unit testing framework and the Page Object concept.
 
 Install  WebdriverIO  and do the following task:
